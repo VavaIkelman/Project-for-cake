@@ -103,12 +103,42 @@ padding: 0 10px;
 	text-transform: uppercase;
 	color: #9a241f;
 }
-
-.header_menu_burger {
+@media (max-width: 767px) {
+.header__burger{
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 20px;
+}
+.header__burger span{
+	background-color: #9a241f;
+position: absolute;
+width: 100%;
+height: 2px;
+left: 0;
+top: 9px;
+}
+.header__burger:before
+.header__burger:after{
+content: '';
+background-color: #9a241f;
+position: absolute;
+width: 100%;
+height: 2px;
+left: 0;
+}
+.header__burger:before{
+	top: 0;
+}
+.header__burger:after{
+	bottom: 0;
+}
+	
+}
+.header__burger {
 	display: none;
 	/*border: 1px solid #9a241f;
-	width: 30px;
-	height: 20px;*/
+	*/
 }
 .header_menu_nav {}
 .header_menu_list {
@@ -143,11 +173,11 @@ padding: 0 10px;
 .header_logo{
 	flex: 0 0 50px;
 }
-	
 
 #menu__toggle{
 	opacity: 0;
 }
+
 .menu__btn{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -216,8 +246,18 @@ padding: 0 10px;
 /*==========PAGE=========*/
 
 .content{
+	width: 100%;
 	margin-top: 130px;
 }
+@media(max-width: 640px) {
+	.content{
+		max-width: 360px;
+		padding: 0 1%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 .lorem {
 	font-size: 20px;
 	color: blue;
@@ -253,10 +293,11 @@ width: 100%;
 	-ms-flex-wrap: wrap;
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
+	padding: 0;
 }
 
 .shop_list_item{
-	width: 48%;
+	
 	box-sizing: border-box;
 	display: flex;
 	border: 1px solid #000;
@@ -269,20 +310,47 @@ width: 100%;
 .shop_list_item:after{
 	
 }
-
-.brusnichniy{
-	background-image: url(../pic/brusnichnui_1280х800.png);
-	
-	
-
-
+@media (min-width: 1200px) {
+	.shop_list_item{
+		width: 23%;
+	}
 }
-.shop_list_item:nth-child(odd){
+@media(min-width: 641px) and (max-width: 1199px){
+	.shop_list_item{
+		width: 48%;
+	}
+}
+@media(max-width: 640px){
+	.shop_list_item{
+
+	}
+}
+@media (min-width: 1200px) {
+	.shop_list_item:nth-child(1n+2){
+	margin-right: 3px;
+}
+.shop_list_item:nth-child(1n+5){
+	margin-top: 5px;
+}
+}
+@media(min-width: 641px) and (max-width: 1199px){
+	.shop_list_item:nth-child(odd){
 	margin-right: calc(1% - 2px);
 }
 .shop_list_item:nth-child(1n+3){
 	margin-top: 5px;
 }
+}
+@media(max-width: 640px){
+	.shop_list_item{
+margin-bottom: 3px;
+	}
+}
+.brusnichniy{
+	background-image: url(../pic/brusnichnui_1280х800.png);
+}
+
+
 .composition_list{
 /*position:absolute;*/
 /*z-index: 2;*/
