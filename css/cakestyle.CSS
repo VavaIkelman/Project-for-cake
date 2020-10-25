@@ -81,8 +81,8 @@ ul {
     .header_body{
 		width: 100%;
 		margin: 0 auto;
-		max-width: 360px;
-		padding: 0 2 0px;
+		max-width: 320px;
+		padding: 0;
 		height: 50px;
     }
     .logo{
@@ -91,12 +91,25 @@ ul {
 	    z-index: 5;
     }
     .header_contacts{
-    	display: none;
+    	/*display: none;*/
     }
 
     .header_contact_tel {
-	    display: none;
+	    /*display: none;*/
+	    font-size: 20px;
+	    color: #23042f;
+	    position: relative;
+	    z-index: 3;
     }
+    /*.header_contact_tel:hover {
+    	content: '';
+	    font-weight: bold;
+	    text-shadow: 2px 4px 10px red;
+	    font-size: 20px;
+	    color: #23042f;
+	    position: relative;
+	    z-index: 3;
+    }*/
 
     .header__burger{
 	    display: block;
@@ -138,19 +151,22 @@ ul {
 	   z-index: 5;
     }
 
-.header__burger.active:before{
+   .header__burger.active:before{
 	transform: rotate(45deg);
 	top: 9px;
 	transition: all 0.2s ease 0s;
-}
-.header__burger.active:after{
+    }
+
+    .header__burger.active:after{
 	transform: rotate(-45deg);
 	bottom: 9px;
 	transition: all 0.2s ease 0s;
-}
-.header__burger.active span{
-	transform: scale(0);
-}
+    }
+
+    .header__burger.active span{
+ 	transform: scale(0);
+    }
+
     .nav_header{
 	   /*display: none;*/
 	   position: fixed;
@@ -164,10 +180,11 @@ ul {
 	   z-index: 2;   
 	   padding-top: 50px;
 	}
+
 	.nav_header.active{
 		top:0;
-
 	}
+
 	.header_menu_list{
 		display: flex;
 		flex-direction: column;
@@ -366,16 +383,18 @@ ul {
 
 .content{
 	width: 100%;
-	margin-top: 130px;
+	
 	/*background-color: #000;*/
 }
 
 @media(max-width: 640px) {
 	.content{
-		max-width: 360px;
-		padding: 0 1%;
+		max-width: 340px;
+		box-sizing: border-box;
+		padding: 0 10px;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 60px;
 	}
 
 	.container_main{
