@@ -202,10 +202,18 @@ ul {
 	   z-index: 5;
     }
 
+.header__burger.active:before{
+	transform: rotate(45deg);
+	top: 9px;
+}
+.header__burger.active:after{
+	transform: rotate(-45deg);
+	bottom: 9px;
+}
     .nav_header{
 	   /*display: none;*/
 	   position: fixed;
-	   /*top:100px;*/
+	   
 	   top:0;
 
 	   right:0;
@@ -213,6 +221,23 @@ ul {
 	   height: 100%;
 	   background-color: #d4b757;
 	   z-index: 2;   
+	   padding-top: 65px;
+	}
+	.header_menu_list{
+		display: flex;
+		flex-direction: column;
+		margin-left: auto;
+		padding-right: 20px;
+	}
+
+	.header_menu__item{
+		display: block;
+		font-style: normal;
+		font-size: 24px;
+		margin-bottom: 20px;
+		padding-left: 0;
+        align-self: flex-end;
+
 	}	
 }
 
